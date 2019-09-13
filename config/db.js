@@ -3,5 +3,5 @@ export default {
   database:
     process.env.NODE_ENV == "test"
       ? "mongodb://localhost/rest-api-test"
-      : "mongodb://localhost/rest-api"
+      : "mongodb://localhost:27017/classmanage"
 };

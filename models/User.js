@@ -2,13 +2,30 @@ import mongoose from "mongoose";
 import bcrypt from "bcrypt-nodejs";
 const Schema = mongoose.Schema;
 mongoose.set("useCreateIndex", true);
-
+// the user model
+//lastName, firstName, email, role, permission,
 const UserSchema = new Schema(
   {
-    username: {
+    lastName: {
+      type: String,
+      required: true
+    },
+    firstName: {
+      type: String,
+      required: true
+    },
+    email: {
       type: String,
       unique: true,
       required: true
+    },
+    _role: {
+      type: [
+        {
+          type: String,
+          default: "student"
+        }
+      ]
     },
     password: {
       type: String,
@@ -16,7 +33,7 @@ const UserSchema = new Schema(
     }
   },
   {
-    timestamps: {createdAt: "created_at", updatedAt: "updated_at"}
+    timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
   }
 );
 

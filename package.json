@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "nodemon --exec babel-node ./bin/www",
+    "server": "babel-node ./bin/www",
+    "dev": "NODE_ENV=development npm-run-all server"
   },
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
@@ -11,16 +13,24 @@
     "debug": "~2.6.9",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
+    "express-session": "^1.16.2",
     "http-errors": "~1.6.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.7.0",
     "morgan": "~1.9.1",
+    "nodemon": "^1.19.2",
+    "npm-run-all": "^4.1.5",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/node": "^7.6.1",
+    "@babel/preset-env": "^7.6.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-add-module-exports": "^1.0.2",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-es2015": "^6.24.1",
     "shx": "^0.3.2"
   }
